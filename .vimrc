@@ -105,6 +105,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/tagbar'
 call plug#end()
 
+"
+" nvim providers https://neovim.io/doc/user/provider.html
+"
+if has('nvim')
+    let g:python3_host_prog = "$HOME/.pyenv/versions/nvim/bin/python"
+    let g:loaded_perl_provider = 0
+endif
+
 silent! source $VIMRUNTIME/defaults.vim
 
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
