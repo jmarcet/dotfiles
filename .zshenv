@@ -20,7 +20,6 @@ fi
 
 if [ -f /etc/arch-release ]; then
     [ $UID -ne 0 ] && systemctl --user import-environment PATH
-    export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/opt/android-sdk/platform-tools:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.gem/ruby/3.0.0/bin:$VITASDK/bin:$PATH
     source /usr/share/doc/find-the-command/ftc.zsh quiet
 
     # export ARCHFLAGS="-arch x86_64"
@@ -58,6 +57,8 @@ fi
 # Paths
 #
 
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/opt/android-sdk/platform-tools:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.gem/ruby/3.0.0/bin:$VITASDK/bin:$PATH
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -69,6 +70,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/bin
+  $HOME/.local/bin
   /usr/local/{bin,sbin}
   $path
   /sbin
