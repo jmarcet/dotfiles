@@ -40,11 +40,6 @@ if [ -f /etc/arch-release ]; then
 
     export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
-    # PYENV_ROOT=$HOME/.pyenv
-    # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    # eval "$(pyenv init -)"
-    # eval "$(pyenv virtualenv-init -)"
-
 elif [ -e /etc/openwrt_release ]; then
     export FZF_BASE=/usr/local/share/fzf
 

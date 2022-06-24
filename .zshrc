@@ -13,6 +13,20 @@ if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi
 
+if [ -z "$(whence pyenv)" ] && [ ! -e $HOME/.pyenv ]; then
+    curl https://pyenv.run | bash
+fi
+
+export PYENV_ROOT=$HOME/.pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+if [ -n "$(whence nvim)" ] && [ -z "$(pyenv virtualenvs | grep nvim)" ]; then
+    pip3 install virtualenv
+    pyenv virtualenv nvim
+    $HOME/.pyenv/versions/nvim/bin/python -m pip install pynvim
+fi
+eval "$(pyenv virtualenv-init -)"
+
 _ask_bool() {
     local default="$1"; shift;
     local answer="$default"
