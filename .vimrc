@@ -22,18 +22,6 @@
 " To configure coc settings:
 " :CocConfig
 "
-" To see git-blame in regular vim:
-"
-" {
-"   "git.addGBlameToBufferVar": true
-" }
-"
-" And in neovim:
-"
-" {
-"   git.addGBlameToVirtualText": true
-" }
-"
 " To check coc installation status:
 "
 " :checkhealth
