@@ -52,8 +52,6 @@ fi
 # Paths
 #
 
-export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/opt/android-sdk/platform-tools:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.gem/ruby/3.0.0/bin:$VITASDK/bin:$PATH
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -66,6 +64,10 @@ typeset -gU cdpath fpath mailpath path
 path=(
   $HOME/bin
   $HOME/.local/bin
+  $HOME/.config/yarn/global/node_modules/.bin
+  $HOME/.gem/ruby/3.0.0/bin
+  $HOME/go/bin
+  /opt/android-sdk/platform-tools
   /usr/local/{bin,sbin}
   $path
   /sbin
