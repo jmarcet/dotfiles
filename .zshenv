@@ -13,11 +13,6 @@ export TMUXIFIER_LAYOUT_PATH=$HOME/.tmux-layouts
 umask 002
 unset GREP_OPTIONS
 
-if [ -s $HOME/.tmuxifier/init.sh ]; then
-    source $HOME/.tmuxifier/init.sh
-    export PATH=$HOME/.tmuxifier/bin:$PATH
-fi
-
 if [ -f /etc/arch-release ]; then
     [ $UID -ne 0 ] && systemctl --user import-environment PATH
     source /usr/share/doc/find-the-command/ftc.zsh quiet

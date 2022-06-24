@@ -13,20 +13,6 @@ if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi
 
-if [ -z "$(whence pyenv)" ] && [ ! -e $HOME/.pyenv ]; then
-    curl https://pyenv.run | bash
-fi
-
-export PYENV_ROOT=$HOME/.pyenv
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-if [ -n "$(whence nvim)" ] && [ -z "$(pyenv virtualenvs | grep nvim)" ]; then
-    pip3 install virtualenv
-    pyenv virtualenv nvim
-    $HOME/.pyenv/versions/nvim/bin/python -m pip install pynvim
-fi
-eval "$(pyenv virtualenv-init -)"
-
 _ask_bool() {
     local default="$1"; shift;
     local answer="$default"
@@ -61,6 +47,22 @@ _ask_tmux() {
             _ask_bool $PRIO "Attach to running tmux ?" && tmux -2u attach -t default
         fi
     fi
+}
+
+_pyenv() {
+    if [ -z "$(whence pyenv)" ] && [ ! -e $HOME/.pyenv ]; then
+        curl https://pyenv.run | bash
+    fi
+
+    export PYENV_ROOT=$HOME/.pyenv
+    command -v pyenv &>/dev/null || export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+    if [ -n "$(whence nvim)" ] && [ -z "$(pyenv virtualenvs | grep nvim)" ]; then
+        pip3 install --user virtualenv
+        pyenv virtualenv nvim
+        $HOME/.pyenv/versions/nvim/bin/python -m pip install pynvim
+    fi
+    eval "$(pyenv virtualenv-init -)"
 }
 
 _ask_tmux
@@ -228,3 +230,6 @@ p10k reload
 
 [ -e /etc/.openwrt_buidroot ] && cd $HOME/src/openwrt-master-x64
 
+[ -s $HOME/.tmuxifier/init.sh ] && source $HOME/.tmuxifier/init.sh
+
+[ $UID -ne 0 ] && _pyenv
