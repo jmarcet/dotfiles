@@ -34,6 +34,12 @@
 "   git.addGBlameToVirtualText": true
 " }
 "
+" To check coc installation status:
+"
+" :checkhealth
+"
+" Don't mind the warning about tmux: https://github.com/neovim/neovim/issues/16237
+"
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
