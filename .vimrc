@@ -157,10 +157,10 @@ nmap <Leader>a# :Tabularize /#<CR>
 vmap <Leader>a# :Tabularize /#<CR>
 
 " copy and cut
-vmap <C-c>      "*yi<ESC>
-vmap <C-x>      "*c<ESC>
-" vmap <C-v>      c<ESC>"*p
-" imap <C-v>      <ESC>"*pa"
+vmap <C-c>      "+yi<ESC>
+vmap <C-x>      "+c<ESC>
+" vmap <C-v>      c<ESC>"+p
+" imap <C-v>      <ESC>"+pa"
 
 " Better tab experience - from https://webdevetc.com/
 map <leader>tn :tabnew<cr>
