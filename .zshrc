@@ -67,6 +67,8 @@ _pyenv() {
 
 _ask_tmux
 
+[ $UID -ne 0 ] && _pyenv
+
 # if [[ -n "`env | grep SCHROOT`" ]]; then
 #     [[ -n "$SCHROOT_SESSION_ID" ]] && export PROMPT="$SCHROOT_SESSION_ID % $PROMPT"
 #     export DISPLAY=:1
@@ -231,5 +233,3 @@ p10k reload
 [ -e /etc/.openwrt_buidroot ] && cd $HOME/src/openwrt-master-x64
 
 [ -s $HOME/.tmuxifier/init.sh ] && source $HOME/.tmuxifier/init.sh
-
-[ $UID -ne 0 ] && _pyenv
