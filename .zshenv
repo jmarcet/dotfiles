@@ -40,6 +40,8 @@ elif [ -e /etc/openwrt_release ]; then
 
 elif [[ "$OSTYPE" == darwin* ]]; then
     export BROWSER=open
+    [ -e /usr/local/bin/python ] || ln -s python3 /usr/local/bin/python
+    [ -e /usr/local/bin/pip ] || ln -s pip3 /usr/local/bin/pip
 
 fi
 
