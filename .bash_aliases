@@ -1,7 +1,6 @@
-unalias cp
-unalias grm
+unalias mv
 [[ "$OSTYPE" == darwin* ]] && _g=g
-_coredir=$( dirname `whence ${_g}cp` )
+_coredir=$( dirname `whence ${_g}mv` )
 
 alias 7za="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
 alias aria2c='aria2c -j 4 -x 4'
