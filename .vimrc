@@ -226,7 +226,6 @@ if !has('nvim')
     if !isdirectory($HOME."/.vim/undo")
         call mkdir($HOME."/.vim/undo", "", 0700)
     endif
-    set clipboard=autoselectplus
     set completeopt=menuone,popup,noinsert
     set t_Co=256                   " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
     set undodir=$HOME/.vim/undo    " Directory where the undo files will be stored
