@@ -1,4 +1,5 @@
 unalias mv
+unalias pip
 [[ "$OSTYPE" == darwin* ]] && _g=g
 _coredir=$( dirname `whence ${_g}mv` )
 
