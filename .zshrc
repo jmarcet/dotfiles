@@ -35,12 +35,7 @@ _ask_tmux() {
     # Ask interactively whether to launch a new tmux session or attach to an
     # existing one, except if running within tmux already or within vscode
     if [ -z "${TMUX}" -a "${TERM_PROGRAM}" != "vscode" ]; then
-        if [ -e /etc/openwrt_release ]; then  # OpenWRT
-            local PRIO=1
-            source /etc/profile
-        else
-            local PRIO=0
-        fi
+        [ -e /etc/openwrt_release ] && local PRIO=1 || local PRIO=0
         if [ -z "$(pgrep -f -u $LOGNAME 'tmux -2u new-session -s default')" ]; then
             _ask_bool 1 "Run new tmux instance ?" && tmux -2u new-session -s default
         else
@@ -64,6 +59,8 @@ _pyenv() {
     fi
     eval "$(pyenv virtualenv-init -)"
 }
+
+[ -e /etc/profile ] && source /etc/profile
 
 _ask_tmux
 
