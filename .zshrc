@@ -23,8 +23,8 @@ _ask_bool() {
     esac
     read answer
     case "$answer" in
-        y*) answer=1;;
-        n*) answer=0;;
+        y*|Y*) answer=1;;
+        n*|N*) answer=0;;
         *) answer="$default";;
     esac
 
