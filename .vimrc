@@ -14,9 +14,11 @@
 " :CocInstall coc-tsserver
 " :CocInstall coc-eslint
 " :CocInstall coc-git
+" :CocInstall coc-go
 " :CocInstall coc-json
 " :CocInstall coc-pyright
 " :CocInstall coc-react-refactor
+" :CocInstall coc-snippets
 " :CocInstall coc-vetur
 "
 " To configure coc settings:
@@ -47,7 +49,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 "Plug 'roxma/nvim-completion-manager'
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'neoclide/coc-snippets'
 Plug 'honza/vim-snippets'
 
 Plug 'junegunn/vim-easy-align'
@@ -475,3 +478,26 @@ omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackSpace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
