@@ -2,8 +2,13 @@
 " Installation of vim-plug and initial addons is automatic
 "
 " For nvim:
-" mkdir -p ~/.config/nvim
-" ln -s ~/.vimrc ~/.config/nvim/init.vim
+" UNIXES:
+"     mkdir -p ~/.config/nvim
+"     ln -s ~/.vimrc ~/.config/nvim/init.vim
+" Windows:
+"     mkdir ~/AppData/Local/nvim
+"     cp .vimrc ~/AppData/Local/nvim/
+"     cp .config/nvim/coc-settings.json ~/AppData/Local/nvim/
 "
 " To delete stale addons:    :PlugClean
 " To install new addons:     :PlugInstall
