@@ -92,8 +92,8 @@ fi
 alias history="history 1"
 
 HISTFILE=$HOME/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=100000
+SAVEHIST=100000
 
 BANG_HIST=1                 # treats the **!** character specially during expansion.
 EXTENDED_HISTORY=1          # writes the history file in the *:start:elapsed;command* format.
