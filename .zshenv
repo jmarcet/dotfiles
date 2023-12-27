@@ -2,6 +2,7 @@ export EDITOR='nvim'
 export PAGER='less'
 export VISUAL='nvim'
 
+export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
 
@@ -116,4 +117,3 @@ SHARE_HISTORY=1             # shares history between all sessions.
 [ -d "$TMPDIR" ] || mkdir -p -m 700 $TMPDIR
 
 TMPPREFIX=$TMPDIR/zsh
-
