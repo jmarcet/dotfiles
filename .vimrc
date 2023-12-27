@@ -239,7 +239,9 @@ if !has('nvim')
     set undodir=$HOME/.vim/undo    " Directory where the undo files will be stored
 end
 
-colorscheme peaksea
+colorscheme desert256v2
+" colorscheme peaksea
+" colorscheme wombat256
 "colorscheme solarized
 "if has('gui_running')
 "   colorscheme molokai
