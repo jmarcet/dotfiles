@@ -227,7 +227,7 @@ p10k reload
 
 [ -e $HOME/.bash_aliases ] && source $HOME/.bash_aliases
 
-[ -e /etc/.openwrt_buidroot ] && cd $HOME/src/openwrt-master-x64
+[ -e /etc/.openwrt_buidroot ] && cd $HOME/src/openwrt/openwrt-master-x64
 
 [ -s $HOME/.tmuxifier/init.sh ] && source $HOME/.tmuxifier/init.sh
 
