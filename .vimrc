@@ -188,7 +188,7 @@ set backspace=eol,indent,start " Make backspaces delete sensibly
 set breakindent
 set browsedir=buffer
 set confirm                    " Ask for confirmation before doing changes
-set cscopepathcomp=2           " How many components of the path to show in a list of tags.
+" set cscopepathcomp=2         " How many components of the path to show in a list of tags.
 " set cursorbind               " Bound cursor moves between windows, useful for diff
 " set debug=throw
 set encoding=utf-8
