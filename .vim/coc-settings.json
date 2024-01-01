@@ -1,9 +1,8 @@
 {
     "git.addGBlameToBufferVar": true,
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "ruff",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.linting.banditEnabled": true,
-    "python.linting.flake8Enabled": true,
     "python.linting.pydocstyleEnabled": true
 }
