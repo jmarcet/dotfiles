@@ -122,6 +122,9 @@ if has("nvim")
     endif
 endif
 
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
+
 silent! source $VIMRUNTIME/defaults.vim
 
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
