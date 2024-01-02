@@ -213,6 +213,11 @@ set mouse=a                    " Enable mouse in all cases"
 set nowrap                     " Do not wrap lines
 set number                     " Show line numbers
 set pastetoggle=<F10>
+if !empty(glob("/usr/local/bin/fzf"))
+    set rtp+=/usr/local/bin/fzf
+elseif !empty(glob('/usr/bin/fzf'))
+    set rtp+=/usr/bin/fzf
+endif
 set shiftround                 " Indent/outdent to nearest tabstop
 set shiftwidth=4               " Indent/outdent by four columns
 set showcmd                    " Show command in the last line of the screen and number of selected lines or size in screen chars
