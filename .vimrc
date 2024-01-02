@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 "Plug 'roxma/nvim-completion-manager'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc-snippets'
 Plug 'honza/vim-snippets'
 
