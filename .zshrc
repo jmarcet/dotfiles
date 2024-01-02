@@ -64,7 +64,7 @@ _pyenv() {
 
 _ask_tmux
 
-[ $UID -ne 0 ] && _pyenv
+[ $UID -ne 0 ] && [ -e /etc/os-release ] && ! grep -q OpenWrt /etc/os-release && _pyenv
 
 # if [[ -n "`env | grep SCHROOT`" ]]; then
 #     [[ -n "$SCHROOT_SESSION_ID" ]] && export PROMPT="$SCHROOT_SESSION_ID % $PROMPT"
