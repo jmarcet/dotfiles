@@ -110,9 +110,16 @@ call plug#end()
 "
 " nvim providers https://neovim.io/doc/user/provider.html
 "
-if has('nvim')
-    let g:python3_host_prog = "$HOME/.pyenv/versions/nvim/bin/python"
-    let g:loaded_perl_provider = 0
+if has("nvim")
+    if !empty(glob("~/.pyenv/versions/nvim/bin/python3"))
+        let g:python3_host_prog = "~/.pyenv/versions/nvim/bin/python3"
+    elseif has("win32") && !empty(glob("C:\\Users\\jmarcet\\scoop\\shims\\python3"))
+        let g:python3_host_prog = "C:\\Users\\jmarcet\\scoop\\shims\\python3"
+    elseif !empty(glob("/usr/local/bin/python3"))
+        let g:python3_host_prog = "/usr/local/bin/python3"
+    elseif !empty(glob("/usr/bin/python3"))
+        let g:python3_host_prog = "/usr/bin/python3"
+    endif
 endif
 
 silent! source $VIMRUNTIME/defaults.vim
