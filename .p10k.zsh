@@ -1559,7 +1559,7 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_schroot() {
-    source /etc/os-release
+    [ -e /etc/os-release ] && source /etc/os-release
     DEFAULT=${ID:+ $ID}
     DEFAULT+=${OPENWRT_DEVICE_PRODUCT:+ $OPENWRT_DEVICE_PRODUCT $VERSION_ID}
     DEFAULT+=${VERSION_CODENAME:+ $VERSION_CODENAME}
