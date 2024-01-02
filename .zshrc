@@ -221,13 +221,13 @@ export ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[ -f $HOME/.p10k.zsh ] && source $HOME/.p10k.zsh
+[ -f $HOME/.p10k.zsh ]          && source $HOME/.p10k.zsh
 
 p10k reload
 
-[ -e $HOME/.bash_aliases ] && source $HOME/.bash_aliases
+[ -e $HOME/.bash_aliases ]      && source $HOME/.bash_aliases
 
-[ -e /etc/.openwrt_buidroot ] && cd $HOME/src/openwrt/openwrt-master-x64
+[ -e /etc/.openwrt_buidroot ]   && cd $HOME/src/openwrt/openwrt-master-x64
 
 [ -s $HOME/.tmuxifier/init.sh ] && source $HOME/.tmuxifier/init.sh
 
