@@ -64,8 +64,6 @@ _pyenv() {
 
 _ask_tmux
 
-[ $UID -ne 0 ] && [ -e /etc/os-release ] && ! grep -q OpenWrt /etc/os-release && _pyenv
-
 # if [[ -n "`env | grep SCHROOT`" ]]; then
 #     [[ -n "$SCHROOT_SESSION_ID" ]] && export PROMPT="$SCHROOT_SESSION_ID % $PROMPT"
 #     export DISPLAY=:1
@@ -227,6 +225,7 @@ p10k reload
 
 [ -e $HOME/.bash_aliases ]      && source $HOME/.bash_aliases
 
+[ $UID -ne 0 ] && [ -e /etc/arch-release ] && _pyenv
 [ -e /etc/.mu7d_schroot ]       && cd $HOME/src/dockers/multimedia/movistar_u7d && pyenv activate mu7d
 [ -e /etc/.openwrt_buidroot ]   && cd $HOME/src/openwrt/openwrt-master-x64
 
