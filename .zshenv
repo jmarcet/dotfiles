@@ -34,7 +34,7 @@ if [ -f /etc/arch-release ]; then
     # export DH_VERBOSE=1
     export USE_CCACHE=1
 
-    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+    [ $UID -ne 0 ] && export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 elif [ -e /etc/openwrt_release ]; then
     export FZF_BASE=/usr/local/share/fzf
